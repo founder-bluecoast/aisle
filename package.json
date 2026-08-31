@@ -27,7 +27,7 @@
     "preview:restart": "node scripts/preview.mjs restart",
     "preview:stop": "node scripts/preview.mjs stop",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test src/lib/shop/pin.test.ts",
+    "test": "node --experimental-strip-types --test src/lib/shop/pin.test.ts src/lib/shop/events-append-only.test.ts",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
