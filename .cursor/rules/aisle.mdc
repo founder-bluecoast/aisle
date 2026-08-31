@@ -1,0 +1,27 @@
+---
+description: Aisle shop-floor doctrine — do not violate
+alwaysApply: true
+---
+
+# Aisle
+
+MIT shop-floor traveler + TV board. Not an ERP. Not a scheduler.
+
+## Constraints (do not relax)
+
+- No user accounts. Station = 4-digit PIN (the bay, not the person). Office PIN for metadata.
+- Paper QR traveler is canonical in the operator's hand. Dual paper + digital.
+- Events are truth. The TV / board is a projection of `traveler_events`. Never mutate status.
+- Never invent a green light. Blank = unknown. Hold without a typed blocker is not a hold.
+- Must work if the internet dies (PGLite / local Postgres).
+- Do not rewrite their ERP. Do not add an AI scheduler. Do not add a dashboard nobody stands in front of.
+
+## Objects
+
+Job, Operation, Station, Traveler event, Blocker, Send-out, Packet.
+
+## Stack
+
+TanStack Start, React 19, Tailwind v4, Postgres via `src/lib/db.ts` (PGLite if no `DATABASE_URL`).
+
+Shop domain lives in `src/lib/shop/`. Routes in `src/routes/`.
