@@ -27,6 +27,8 @@ No user accounts. Gloves, bad lighting, a TV at the aisle. Must work if the inte
 
 Scan traveler `T-45112-A` (Honda, RUSH). Waveguide flange `T-41888` is out at Anodic Tech.
 
+These keys are public demo values. Do not leave them on a real shop box. Pick new 4-digit bay and office PINs, and set `AISLE_PIN_PEPPER` in the environment so a copied database is not enough to recover them.
+
 ## Run it (Cursor, or any Node 22 machine)
 
 ```bash
@@ -36,7 +38,7 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints (binds `0.0.0.0:8080`). No `.env` required — it boots an embedded Postgres (PGLite) and seeds Harbor Precision.
+Open the URL Vite prints (binds `0.0.0.0:8080` so shop-floor tablets can reach it). There is no login wall — treat that bind as the shop LAN, not the public internet. Heat lots, POs, and quoted prices live in the same process. No `.env` required for a demo — it boots an embedded Postgres (PGLite) and seeds Harbor Precision.
 
 To point at a real Postgres later:
 

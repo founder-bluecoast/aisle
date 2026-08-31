@@ -24,3 +24,5 @@ MIT shop-floor job traveler + TV board. Events are truth. TV is a projection. Pa
 ## Demo keys
 
 `1001` Saw · `1002` Haas · `1003` Deburr · `1004` CMM · office `2468`
+
+Public demo values. Never ship them as production defaults. Bay/office PINs are scrypt + per-row salt in `src/lib/shop/pin.ts`; optional `AISLE_PIN_PEPPER`. Never return `pin_hash` to a client. `traveler_events` are append-only (DB trigger). Do not render raw `error.message` on station/TV.
